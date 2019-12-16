@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>a4aa20f0-dc23-4ad2-81f8-3a4187646d2c</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Python_Web_Scrapper.py</StartupFile>
+    <StartupFile>Theory\Modules.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Python_Web_Scrapper.py" />
+    <Compile Include="Theory\Calculator.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Theory\Conditionals.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Theory\Keyworded Arguments.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Theory\Modules.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Theory\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
