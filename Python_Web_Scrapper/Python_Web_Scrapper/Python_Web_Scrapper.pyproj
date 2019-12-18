@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>a4aa20f0-dc23-4ad2-81f8-3a4187646d2c</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Theory\Modules.py</StartupFile>
+    <StartupFile>main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,7 +21,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Python_Web_Scrapper.py" />
+    <Compile Include="Building_a_Job_Scrapper\Extracting_indeed_pages.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="main.py" />
     <Compile Include="Theory\Calculator.py">
       <SubType>Code</SubType>
     </Compile>
@@ -36,6 +39,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Building_a_Job_Scrapper\" />
     <Folder Include="Theory\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
