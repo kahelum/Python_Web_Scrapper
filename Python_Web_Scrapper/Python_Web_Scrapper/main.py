@@ -1,7 +1,7 @@
-from Building_a_Job_Scrapper import Extracting_indeed_pages as indeed
+from Building_a_Job_Scrapper import Extracting_indeed_pages as get_indeed
+from Building_a_Job_Scrapper import Extracting_stackoverflow_pages as get_stackoverflow
 
-last_indeed_pages = indeed.extract_indeed_pages()
+#indeed_jobs = get_indeed.get_jobs()
+stackoverflow_jobs = get_stackoverflow.get_jobs()
 
-indeed_jobs = indeed.extract_indeed_jobs(last_indeed_pages)
-
-print(indeed_jobs)
+#print(indeed_jobs)

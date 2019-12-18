@@ -36,14 +36,14 @@ def extract_indeed_pages():
 def extract_job(html):
     title = html.find("div", {"class" : "title"}).find('a')["title"]
     company = html.find("span", {"class" : "company"})
-    try:            # 회사이름이 없는 경우 company_anchor = company.find('a')에서 None 오류가 발생해서 try / except 적용
+    try: #if company:  # 회사이름이 없는 경우 company_anchor = company.find('a')에서 None 오류가 발생해서 try / except적용 or if / eles사용
         company_anchor = company.find('a')
         if company_anchor is not None:
             company = str(company_anchor.string)
         else:
             company = str(company.string)
-    except:
-        company = "Unknown"
+    except: #else:
+        company = "Unknown" #company = None
     company = company.strip()
     location = html.find("div",{"class" : "recJobLoc"})["data-rc-loc"]
     job_id = html["data-jk"]
@@ -57,6 +57,14 @@ def extract_indeed_jobs(last_page):
         soup = BeautifulSoup(result.text, "html.parser")
         results = soup.find_all("div", {"class" : "jobsearch-SerpJobCard"})
         for result in results:
-            job = extract_job(result)
+            job = extract_job(result)       # result = html
             jobs.append(job)
     return jobs
+
+
+def get_jobs():
+    last_indeed_pages = extract_indeed_pages()
+
+    indeed_jobs = extract_indeed_jobs(last_indeed_pages)
+
+    return indeed_jobs
