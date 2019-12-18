@@ -9,12 +9,15 @@ def extract_stackoverflow_pages():
     pages = soup.find("div", {"class" : "s-pagination"}).find_all("a")
     last_page = pages[-2].get_text(strip=True)
     return int(last_page)
-    
+
+"""    
 def extract_job(html):
-    #title = html.find("div", {"class" : "-title"}).find("span")["data-ga-label"]
-    #company, location = html.find("div", {"class" : "-company"}).find_all("span", recursive = False)
-    #print(company.get_text(strip = True), location.get_text(strip = True))
-    return {'title': title}
+    title = html.find("div", {"class" : "-title"}).find("span")["data-ga-label"]
+    company, location = html.find("div", {"class" : "-company"}).find_all("span", recursive = False)
+    company = company.get_text(strip = True)
+    location = location.get_text(strip = True).strip("-").strip(" \r").strip("\n")
+    return {'title': title, 'company' : company, 'location' : location}
+"""
 
 def extract_stackoverflow_jobs(last_page):
     jobs = []
