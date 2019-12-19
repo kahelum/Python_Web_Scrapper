@@ -10,14 +10,14 @@ def extract_stackoverflow_pages():
     last_page = pages[-2].get_text(strip=True)
     return int(last_page)
 
-"""    
 def extract_job(html):
-    title = html.find("div", {"class" : "-title"}).find("span")["data-ga-label"]
-    company, location = html.find("div", {"class" : "-company"}).find_all("span", recursive = False)
-    company = company.get_text(strip = True)
-    location = location.get_text(strip = True).strip("-").strip(" \r").strip("\n")
-    return {'title': title, 'company' : company, 'location' : location}
-"""
+    title = html.find("h2").get_text()
+    company_location = html.find("h3").get_text(strip = True)
+    """ 다른 방식
+    company = html.find("h3").find("span").get_text(strip=True)
+    location = html.find("h3").find("span", {"class": "fc-black-500"}).get_text(strip=True)
+    """
+    return {'title': title, 'company_location' : company_location}
 
 def extract_stackoverflow_jobs(last_page):
     jobs = []
