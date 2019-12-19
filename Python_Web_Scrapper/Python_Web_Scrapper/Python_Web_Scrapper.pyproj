@@ -27,7 +27,7 @@
     <Compile Include="Building_a_Job_Scrapper\Extracting_stackoverflow_pages.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Building_a_Job_Scrapper\Extracting_stackoverflow_pages_error.py">
+    <Compile Include="Building_a_Job_Scrapper\save.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="main.py" />
@@ -47,6 +47,9 @@
   <ItemGroup>
     <Folder Include="Building_a_Job_Scrapper\" />
     <Folder Include="Theory\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="jobs.csv" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
