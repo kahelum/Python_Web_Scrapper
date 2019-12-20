@@ -64,5 +64,5 @@ def extract_indeed_jobs(last_page):
 
 def get_jobs():
     last_indeed_pages = extract_indeed_pages()
-    indeed_jobs = extract_indeed_jobs(1)
+    indeed_jobs = extract_indeed_jobs(last_indeed_pages)
     return indeed_jobs

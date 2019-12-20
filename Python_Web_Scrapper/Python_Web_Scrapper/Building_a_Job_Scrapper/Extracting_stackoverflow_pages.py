@@ -33,5 +33,5 @@ def extract_stackoverflow_jobs(last_page):
 
 def get_jobs():
     last_stackoverflow_pages = extract_stackoverflow_pages()
-    jobs = extract_stackoverflow_jobs(1)
+    jobs = extract_stackoverflow_jobs(last_stackoverflow_pages)
     return jobs
